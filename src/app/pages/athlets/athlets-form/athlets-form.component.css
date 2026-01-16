@@ -1,0 +1,9 @@
+/* simple spacing helpers for the form */
+.border { border: 1px solid #e5e7eb; }
+.p-2 { padding: 0.5rem; }
+.md\:col-span-2 { grid-column: span 2 / span 2; }
+.mt-4 { margin-top: 1rem; }
+.flex { display: flex; }
+.justify-end { justify-content: flex-end; }
+.gap-2 { gap: 0.5rem; }
+

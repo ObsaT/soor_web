@@ -6,4 +6,5 @@ export interface Athlete {
   photoUrl?: string;
   bio?: string;
   personalBest?: string;
+  FullName?: string;
 }

@@ -13,6 +13,8 @@
       <li><a routerLink="/contact">Contact</a></li>
       <li><a routerLink="/shop">Shop</a></li>
       <li><a routerLink="/register" class="btn-primary">Register</a></li>
+      <li *ngIf="(isAuthenticated$ | async) === false"><a routerLink="/login">Login</a></li>
+      <li *ngIf="(isAuthenticated$ | async)"><button (click)="logout()" class="hover:underline">Logout</button></li>
     </ul>
 
     <!-- Mobile menu button -->
@@ -40,5 +42,7 @@
     <li><a routerLink="/contact" class="hover:underline" (click)="closeMobile()">Contact</a></li>
     <li><a routerLink="/shop" class="hover:underline" (click)="closeMobile()">Shop</a></li>
     <li><a routerLink="/register" class="btn-primary w-full text-center" (click)="closeMobile()">Register</a></li>
+    <li *ngIf="(isAuthenticated$ | async) === false"><a routerLink="/login" class="w-full text-center" (click)="closeMobile()">Login</a></li>
+    <li *ngIf="(isAuthenticated$ | async)"><button (click)="logout(); closeMobile()" class="w-full text-left">Logout</button></li>
   </ul>
 </nav>

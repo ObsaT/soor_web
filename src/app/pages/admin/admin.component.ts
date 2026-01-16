@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { EventModel } from '../../core/models/event.model';
 import { ApiService } from '../../core/services/api.service';
-import { CommonModule, DatePipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-admin',
-  imports: [CommonModule, DatePipe],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './admin.component.html',
-  styleUrl: './admin.component.css'
+  styleUrls: ['./admin.component.css']
 })
 export class AdminComponent {
   events: EventModel[] = [
@@ -25,14 +26,16 @@ export class AdminComponent {
     }
   ];
 
-constructor(private api: ApiService) {}
+  constructor(private api: ApiService) {}
 
 
-ngOnInit(): void {
-// this.api.getEvents().subscribe(e => this.events = e);
+  ngOnInit(): void {
+    // this.api.getEvents().subscribe(e => this.events = e);
+  }
+
+
+  deleteEvent(id: string) {
+    this.events = this.events.filter(x => x.id !== id);
+  }
+
 }
-
-
-deleteEvent(id: string) {
-this.events = this.events.filter(x => x.id !== id);
-}}

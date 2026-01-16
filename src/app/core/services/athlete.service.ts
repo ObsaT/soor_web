@@ -10,4 +10,5 @@ export class AthleteService {
   get(id: number) { return this.api.get<Athlete>(`athletes/${id}`); }
   add(athlete: Athlete) { return this.api.post('athletes', athlete); }
   update(athlete: Athlete) { return this.api.put(`athletes/${athlete.id}`, athlete); }
+  delete(id: number) { return this.api.delete(`athletes/${id}`); }
 }

@@ -1,0 +1,8 @@
+.login-page {
+  max-width: 420px;
+  margin: 16px auto;
+  padding: 12px;
+}
+.login-page label { display:block; margin-top:8px; }
+.login-page input { width:100%; padding:8px; margin-top:4px; }
+.login-page button { margin-top:12px; padding:8px 16px; }

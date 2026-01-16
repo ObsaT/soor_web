@@ -1,0 +1,14 @@
+<div class="p-4">
+	<div class="grid gap-3 md:grid-cols-2">
+		<input placeholder="Name" [(ngModel)]="form.name" class="border p-2" />
+		<input placeholder="Discipline" [(ngModel)]="form.discipline" class="border p-2" />
+		<input placeholder="Country" [(ngModel)]="form.country" class="border p-2" />
+		<input placeholder="Personal Best" [(ngModel)]="form.personalBest" class="border p-2" />
+		<input placeholder="Photo URL" [(ngModel)]="form.photoUrl" class="border p-2 md:col-span-2" />
+		<textarea placeholder="Bio" [(ngModel)]="form.bio" class="border p-2 md:col-span-2"></textarea>
+	</div>
+	<div class="mt-4 flex gap-2 justify-end">
+		<button class="btn-primary" (click)="doSubmit()">Save</button>
+		<button class="btn-ghost" (click)="doCancel()">Cancel</button>
+	</div>
+</div>
