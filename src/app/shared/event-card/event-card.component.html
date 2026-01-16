@@ -1,0 +1,9 @@
+<div class="card flex gap-4 items-center ">
+<div class="w-20 h-16 bg-gray-200 rounded overflow-hidden flex-shrink-0">
+<img src="assets/event3.jpg" alt="{{event.title}}" class="w-full h-full object-cover">
+</div>
+<div>
+<div class="font-semibold">{{event.title}}</div>
+<div class="text-sm text-gray-500">{{ event.date | date:'mediumDate' }} • {{event.location}}</div>
+</div>
+</div>

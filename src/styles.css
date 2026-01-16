@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "tailwindcss";
+
+/* custom */
+/* body { @apply bg-lightGrayBg text-[#1A1A1A] font-inter; }
+.card { @apply bg-white rounded-lg-12 shadow-sm p-4; }
+.btn-primary { @apply bg-accent text-white py-3 px-5 rounded-lg-12 font-semibold; } */
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-lightGrayBg text-[#1A1A1A] font-inter;
+}
+.card {
+  @apply bg-white rounded-lg-12 shadow-sm p-4;
+}
+.btn-primary {
+  @apply bg-accent text-white py-3 px-5 rounded-lg-12 font-semibold;
+} */

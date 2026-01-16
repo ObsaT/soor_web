@@ -1,0 +1,33 @@
+<div class="space-y-6 max-w-[500px] mx-auto px-4 py-8">
+<h1 class="text-2xl font-bold">Register</h1>
+
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+<div *ngIf="step === 1" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<input formControlName="firstName" placeholder="First name" class="border rounded px-3 py-2" />
+<input formControlName="lastName" placeholder="Last name" class="border rounded px-3 py-2" />
+<input formControlName="email" placeholder="Email" class="border rounded px-3 py-2 col-span-2" />
+<select formControlName="category" class="border rounded px-3 py-2 col-span-2">
+<option value="marathon">Marathon</option>
+<option value="half">Half Marathon</option>
+<option value="10k">10K</option>
+</select>
+</div>
+
+
+<div *ngIf="step === 2">
+<h3 class="font-semibold">Payment</h3>
+<select formControlName="paymentMethod" class="border rounded px-3 py-2">
+<option value="card">Card</option>
+<option value="mobile">Mobile Money</option>
+</select>
+</div>
+
+
+<div class="flex gap-3 mt-4">
+<button type="button" class="px-3 py-2 border rounded" (click)="prev()">Back</button>
+<button type="button" class="px-3 py-2 bg-orange-500 text-white rounded" (click)="next()" *ngIf="step < 2">Next</button>
+<button type="submit" class="px-3 py-2 bg-green-600 text-white rounded" *ngIf="step === 2">Submit</button>
+</div>
+</form>
+</div>

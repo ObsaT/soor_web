@@ -1,0 +1,44 @@
+<nav class="w-full shadow-sm bg-white relative z-50">
+  <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+    <!-- Logo -->
+    <a routerLink="/" class="text-2xl font-bold tracking-wide">Athletics</a>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex gap-6 items-center text-sm">
+      <li><a routerLink="/" class="hover:underline">Home</a></li>
+      <li><a routerLink="/athletes">Athletes</a></li>
+      <li><a routerLink="/events">Events</a></li>
+      <li><a routerLink="/training">Training</a></li>
+      <li><a routerLink="/about">About</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
+      <li><a routerLink="/shop">Shop</a></li>
+      <li><a routerLink="/register" class="btn-primary">Register</a></li>
+    </ul>
+
+    <!-- Mobile menu button -->
+    <div class="flex items-center gap-3 md:hidden">
+      <button (click)="toggleMobile()" aria-label="Toggle Menu">
+        <svg *ngIf="!mobileOpen" width="24" height="24" fill="none">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="#111" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <svg *ngIf="mobileOpen" width="24" height="24" fill="none">
+          <path d="M6 6l12 12M6 18L18 6" stroke="#111" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <ul 
+    class="md:hidden flex flex-col gap-4 px-4 py-4 bg-white shadow-md absolute top-full left-0 w-full transition-all duration-300"
+    [class.hidden]="!mobileOpen">
+    <li><a routerLink="/" class="hover:underline" (click)="closeMobile()">Home</a></li>
+    <li><a routerLink="/athletes" class="hover:underline" (click)="closeMobile()">Athletes</a></li>
+    <li><a routerLink="/events" class="hover:underline" (click)="closeMobile()">Events</a></li>
+    <li><a routerLink="/training" class="hover:underline" (click)="closeMobile()">Training</a></li>
+    <li><a routerLink="/about" class="hover:underline" (click)="closeMobile()">About</a></li>
+    <li><a routerLink="/contact" class="hover:underline" (click)="closeMobile()">Contact</a></li>
+    <li><a routerLink="/shop" class="hover:underline" (click)="closeMobile()">Shop</a></li>
+    <li><a routerLink="/register" class="btn-primary w-full text-center" (click)="closeMobile()">Register</a></li>
+  </ul>
+</nav>
