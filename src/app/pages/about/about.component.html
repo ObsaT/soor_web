@@ -1,63 +1,108 @@
-<div class="w-full max-w-5xl mx-auto px-4">
-
-  <!-- Hero -->
-  <section class="grid md:grid-cols-2 gap-4 items-center py-4 px-6">
-    <div>
-      <h1 class="text-4xl font-bold text-dark">Empowering Athletes to Reach Their Peak</h1>
-      <p class="mt-4 text-gray-600">
-        We represent and support athletes across Ethiopia and the world—connecting top talent with global opportunities.
+<div class="bg-gray-50 min-h-screen">
+  <!-- Header/Hero -->
+  <section class="relative bg-slate-900 py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <img src="/assets/hero-tech.png" class="w-full h-full object-cover" alt="">
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">About Us</h1>
+      <p class="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        Building the future of African enterprise through technical excellence and strategic innovation.
       </p>
     </div>
-    <img src="/assets/hero-athlete.jpg" class="rounded-xl shadow-md" alt="">
   </section>
 
-  <!-- Mission -->
-  <section class="bg-lightGrayBg py-6 px-6 text-center">
-    <h2 class="text-3xl font-semibold">Our Mission</h2>
-    <p class="mt-4 text-gray-700 max-w-2xl mx-auto">
-      Supporting athletes with world-class representation, sponsorship guidance, competition planning,
-      and international exposure.
-    </p>
-  </section>
-
-  <!-- Services -->
-  <section class="py-6 px-6">
-    <h2 class="text-3xl font-semibold text-center mb-12">What We Do</h2>
-
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded-xl shadow-sm">
-        <h3 class="font-semibold text-xl">Athlete Representation</h3>
-        <p class="mt-2 text-gray-600">Contract negotiation, sponsorships, event opportunities.</p>
-      </div>
-
-      <div class="bg-white p-6 rounded-xl shadow-sm">
-        <h3 class="font-semibold text-xl">Event Coordination</h3>
-        <p class="mt-2 text-gray-600">Registration, logistics, travel support.</p>
-      </div>
-
-      <div class="bg-white p-6 rounded-xl shadow-sm">
-        <h3 class="font-semibold text-xl">Training Program Support</h3>
-        <p class="mt-2 text-gray-600">Access to elite-level training programs and coaches.</p>
-      </div>
-
-      <div class="bg-white p-6 rounded-xl shadow-sm">
-        <h3 class="font-semibold text-xl">Brand Partnerships</h3>
-        <p class="mt-2 text-gray-600">Sponsorship scouting and deal management.</p>
-      </div>
-
-      <div class="bg-white p-6 rounded-xl shadow-sm">
-        <h3 class="font-semibold text-xl">Athlete Marketing</h3>
-        <p class="mt-2 text-gray-600">Portfolio creation, social media strategy.</p>
+  <!-- Company Story -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="text-blue-600 font-bold tracking-widest uppercase text-xs mb-4 block">Our Story</span>
+          <h2 class="text-4xl font-bold text-gray-900 mb-8">{{companyHistory.title}}</h2>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            {{companyHistory.content}}
+          </p>
+          <!-- <div class="mt-10 grid grid-cols-3 gap-8 border-t border-gray-100 pt-10">
+            <div>
+              <div class="text-3xl font-black text-blue-600">50+</div>
+              <div class="text-xs font-bold text-gray-400 uppercase tracking-widest mt-1">Projects</div>
+            </div>
+            <div>
+              <div class="text-3xl font-black text-blue-600">20+</div>
+              <div class="text-xs font-bold text-gray-400 uppercase tracking-widest mt-1">Experts</div>
+            </div>
+            <div>
+              <div class="text-3xl font-black text-blue-600">100%</div>
+              <div class="text-xs font-bold text-gray-400 uppercase tracking-widest mt-1">Success</div>
+            </div>
+          </div> -->
+        </div>
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-152207182399e-b89e7df830c5?q=80&w=2070&auto=format&fit=crop"
+            class="rounded-[2.5rem] shadow-2xl" alt="Team Collaboration">
+          <div class="absolute -top-10 -right-10 w-40 h-40 bg-blue-600/5 rounded-full blur-2xl"></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="text-center py-6 bg-accent text-white">
-    <h2 class="text-3xl font-semibold">Ready to Join Our Athlete Network?</h2>
-    <button class="mt-6 bg-white text-accent px-8 py-3 rounded-lg font-semibold">
-      Contact Us
-    </button>
+  <!-- Leadership Section -->
+  <!-- <section class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4 tracking-tight">Executive Leadership</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">The strategic minds guiding Soor Technology Group.</p>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+      <div *ngFor="let leader of leadership"
+        class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all group">
+        <div
+          class="w-20 h-20 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-3xl font-bold mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all">
+          {{leader.name.charAt(1)}}
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 mb-2">{{leader.name}}</h3>
+        <p class="text-blue-600 font-medium mb-4">{{leader.role}}</p>
+        <p class="text-gray-500 text-sm italic">"{{leader.bio}}"</p>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Employee Section -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4 tracking-tight">Our Expert Team</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Highly skilled professionals dedicated to delivering excellence in
+          every project.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div *ngFor="let emp of employees"
+          class="group p-6 bg-gray-50 rounded-2xl border border-gray-100 hover:bg-white hover:shadow-lg transition-all">
+          <div class="flex items-center gap-6">
+            <img [src]="emp.image"
+              class="w-16 h-16 rounded-2xl object-cover shadow-md grayscale group-hover:grayscale-0 transition-all border-2 border-white"
+              [alt]="emp.name">
+            <div>
+              <h4 class="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{{emp.name}}</h4>
+              <p class="text-[10px] font-black text-blue-500 uppercase tracking-widest">{{emp.department}}</p>
+            </div>
+          </div>
+          <p class="mt-4 text-sm text-gray-600">{{emp.role}}</p>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <!-- Join Us CTA -->
+  <!-- <section class="py-24 bg-blue-600 text-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-6">Join Our Growing Team</h2>
+      <p class="text-blue-100 text-lg mb-10">We are always looking for passionate innovators to join our journey.
+        Explore opportunities to build something great with us.</p>
+      <a href="mailto:careers@soortech.com"
+        class="px-10 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-all shadow-xl shadow-blue-900/10">
+        View Open Positions
+      </a>
+    </div>
+  </section> -->
 </div>

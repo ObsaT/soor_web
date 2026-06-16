@@ -6,7 +6,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
   selector: 'app-contact',
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.css'
+  styleUrl: './contact.component.css',
 })
 export class ContactComponent {
   form: FormGroup;
@@ -15,12 +15,12 @@ export class ContactComponent {
     this.form = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required]
+      message: ['', Validators.required],
     });
   }
 
-  send(){
-    if(this.form.valid) {
+  send() {
+    if (this.form.valid) {
       alert('Message sent — mock (implement API call)');
       this.form.reset();
     }

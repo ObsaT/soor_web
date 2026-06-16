@@ -1,48 +1,66 @@
-<nav class="w-full shadow-sm bg-white relative z-50">
-  <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+<nav class="w-full shadow-sm bg-white border-b border-gray-100 relative z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <!-- Logo -->
-    <a routerLink="/" class="text-2xl font-bold tracking-wide">Athletics</a>
+    <a [routerLink]="['/client/home']" class="flex items-center gap-3 group">
+      <img src="/assets/soor-logo.png" alt="SOOR Logo" class="h-10 w-auto group-hover:scale-110 transition-transform">
+      <span
+        class="text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">SOOR
+        TECH</span>
+    </a>
 
     <!-- Desktop Menu -->
-    <ul class="hidden md:flex gap-6 items-center text-sm">
-      <li><a routerLink="/" class="hover:underline">Home</a></li>
-      <li><a routerLink="/athletes">Athletes</a></li>
-      <li><a routerLink="/events">Events</a></li>
-      <li><a routerLink="/training">Training</a></li>
-      <li><a routerLink="/about">About</a></li>
-      <li><a routerLink="/contact">Contact</a></li>
-      <li><a routerLink="/shop">Shop</a></li>
-      <li><a routerLink="/register" class="btn-primary">Register</a></li>
-      <li *ngIf="(isAuthenticated$ | async) === false"><a routerLink="/login">Login</a></li>
-      <li *ngIf="(isAuthenticated$ | async)"><button (click)="logout()" class="hover:underline">Logout</button></li>
+    <ul class="hidden md:flex gap-8 items-center text-sm font-semibold text-slate-600">
+      <li><a [routerLink]="['/client/home']" fragment="overview"
+          class="hover:text-blue-600 transition-colors">Overview</a></li>
+      <li><a [routerLink]="['/client/home']" fragment="services"
+          class="hover:text-blue-600 transition-colors">Services</a></li>
+      <li><a [routerLink]="['/client/home']" fragment="expertise"
+          class="hover:text-blue-600 transition-colors">Expertise</a></li>
+      <li><a [routerLink]="['/client/home']" fragment="products"
+          class="hover:text-blue-600 transition-colors">Products</a></li>
+      <li><a [routerLink]="['/client/about']" class="hover:text-blue-600 transition-colors">About Us</a></li>
+      <li><a [routerLink]="['/client/contact']" class="hover:text-blue-600 transition-colors">Contact</a></li>
+      <!-- <li *ngIf="(isAuthenticated$ | async) === false">
+        <a [routerLink]="['/client/login']"
+          class="px-5 py-2.5 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/20">Client
+          Login</a>
+      </li> -->
+      <li *ngIf="(isAuthenticated$ | async)">
+        <button (click)="logout()"
+          class="px-5 py-2.5 border border-slate-200 rounded-xl hover:bg-slate-50 transition-all">Logout</button>
+      </li>
     </ul>
 
     <!-- Mobile menu button -->
     <div class="flex items-center gap-3 md:hidden">
-      <button (click)="toggleMobile()" aria-label="Toggle Menu">
-        <svg *ngIf="!mobileOpen" width="24" height="24" fill="none">
-          <path d="M4 6h16M4 12h16M4 18h16" stroke="#111" stroke-width="1.5" stroke-linecap="round"/>
+      <button (click)="toggleMobile()" class="p-2 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors"
+        aria-label="Toggle Menu">
+        <svg *ngIf="!mobileOpen" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke-width="2" stroke-linecap="round" />
         </svg>
-        <svg *ngIf="mobileOpen" width="24" height="24" fill="none">
-          <path d="M6 6l12 12M6 18L18 6" stroke="#111" stroke-width="1.5" stroke-linecap="round"/>
+        <svg *ngIf="mobileOpen" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M6 6l12 12M6 18L18 6" stroke-width="2" stroke-linecap="round" />
         </svg>
       </button>
     </div>
   </div>
 
   <!-- Mobile Menu -->
-  <ul 
-    class="md:hidden flex flex-col gap-4 px-4 py-4 bg-white shadow-md absolute top-full left-0 w-full transition-all duration-300"
-    [class.hidden]="!mobileOpen">
-    <li><a routerLink="/" class="hover:underline" (click)="closeMobile()">Home</a></li>
-    <li><a routerLink="/athletes" class="hover:underline" (click)="closeMobile()">Athletes</a></li>
-    <li><a routerLink="/events" class="hover:underline" (click)="closeMobile()">Events</a></li>
-    <li><a routerLink="/training" class="hover:underline" (click)="closeMobile()">Training</a></li>
-    <li><a routerLink="/about" class="hover:underline" (click)="closeMobile()">About</a></li>
-    <li><a routerLink="/contact" class="hover:underline" (click)="closeMobile()">Contact</a></li>
-    <li><a routerLink="/shop" class="hover:underline" (click)="closeMobile()">Shop</a></li>
-    <li><a routerLink="/register" class="btn-primary w-full text-center" (click)="closeMobile()">Register</a></li>
-    <li *ngIf="(isAuthenticated$ | async) === false"><a routerLink="/login" class="w-full text-center" (click)="closeMobile()">Login</a></li>
-    <li *ngIf="(isAuthenticated$ | async)"><button (click)="logout(); closeMobile()" class="w-full text-left">Logout</button></li>
-  </ul>
+  <div class="md:hidden overflow-hidden transition-all duration-500 ease-in-out bg-white border-b border-gray-100"
+    [class.max-h-0]="!mobileOpen" [class.max-h-[600px]]="mobileOpen">
+    <ul class="flex flex-col p-6 gap-6 text-lg font-bold text-slate-900">
+      <li><a [routerLink]="['/client/home']" (click)="closeMobile()" class="hover:text-blue-600">Home</a></li>
+      <li><a [routerLink]="['/client/home']" fragment="overview" (click)="closeMobile()"
+          class="hover:text-blue-600">Overview</a></li>
+      <li><a [routerLink]="['/client/home']" fragment="services" (click)="closeMobile()"
+          class="hover:text-blue-600">Services</a></li>
+      <li><a [routerLink]="['/client/about']" (click)="closeMobile()" class="hover:text-blue-600">About Us</a></li>
+      <li><a [routerLink]="['/client/contact']" (click)="closeMobile()" class="hover:text-blue-600">Contact</a></li>
+      <li class="pt-4">
+        <a [routerLink]="['/client/login']" (click)="closeMobile()"
+          class="block w-full py-4 bg-blue-600 text-white text-center rounded-2xl shadow-xl shadow-blue-500/20">Client
+          Portal</a>
+      </li>
+    </ul>
+  </div>
 </nav>
