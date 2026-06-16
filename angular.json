@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "athletics-agent": {
+    "soor_tech": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/athletics-agent",
+            "outputPath": "dist/soor_tech",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -50,10 +50,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "athletics-agent:build:production"
+              "buildTarget": "soor_tech:build:production"
             },
             "development": {
-              "buildTarget": "athletics-agent:build:development"
+              "buildTarget": "soor_tech:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,6 +76,9 @@
              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

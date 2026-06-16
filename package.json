@@ -1,5 +1,5 @@
 {
-  "name": "athletics-agent",
+  "name": "soor_tech",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -19,6 +19,7 @@
     "@angular/router": "^19.2.0",
     "@fortawesome/fontawesome-free": "^7.1.0",
     "@tailwindcss/postcss": "^4.1.17",
+    "gh-pages": "^6.3.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
@@ -28,6 +29,7 @@
     "@angular/cli": "^19.2.15",
     "@angular/compiler-cli": "^19.2.0",
     "@types/jasmine": "~5.1.0",
+    "angular-cli-ghpages": "^3.1.0",
     "autoprefixer": "^10.4.22",
     "jasmine-core": "~5.6.0",
     "karma": "~6.4.0",
