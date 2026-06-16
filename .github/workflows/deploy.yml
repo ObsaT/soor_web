@@ -25,7 +25,9 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build -- --base-href=/soor_web/
+        run: |
+          npm run build -- --base-href=/soor_web/
+          cp dist/soor_tech/browser/index.html dist/soor_tech/browser/404.html
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
